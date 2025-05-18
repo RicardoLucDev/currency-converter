@@ -183,7 +183,7 @@ currencySelectToConvert.addEventListener("change", function () {
 
     if (currencySelectToConvert.value == "dolar") {
         currencyName.innerHTML = "US$ Dólar Americano"
-        currencyImg.src = "./assets/Dollar.png"
+        currencyImg.src = "./assets/dollar.png"
     }
     else if (currencySelectToConvert.value == "euro") {
         currencyName.innerHTML = "€ Euro"
