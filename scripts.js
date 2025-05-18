@@ -211,7 +211,7 @@ currencySelectFromConvert.addEventListener("change", function () {
 
     if (currencySelectFromConvert.value == "dolar") {
         currencyName.innerHTML = "US$ Dólar Americano"
-        currencyImg.src = "./assets/Dollar.png"
+        currencyImg.src = "./assets/dollar.png"
     }
     else if (currencySelectFromConvert.value == "euro") {
         currencyName.innerHTML = "€ Euro"
