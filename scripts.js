@@ -2,19 +2,13 @@ const convertButton = document.querySelector(".convert-button")
 const currencySelectFromConvert = document.querySelector(".currency-select-from-convert")
 const currencySelectToConvert = document.querySelector(".currency-select-to-convert")
 
-let BRL_USD, BRL_EUR, BRL_GBP, BRL_BTC
-
-fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL,BTC-BRL")
-    .then(res => res.json())
-    .then(data => {
-        BRL_USD = data.USDBRL.ask, BRL_EUR = data.EURBRL.ask, BRL_GBP = data.GBPBRL.ask, BRL_BTC = data.BTCBRL.ask;
-    })
-    .catch(err => console.error("Erro ao buscar dados da API:", err));
-
-function convertValues() {
+async function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
     const currencyFromConvert = document.querySelector(".currency-from-convert")
     const currencyToConvert = document.querySelector(".currency-to-converted")
+
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL,BTC-BRL").then(res => res.json())
+    const BRL_USD = data.USDBRL.ask, BRL_EUR = data.EURBRL.ask, BRL_GBP = data.GBPBRL.ask, BRL_BTC = data.BTCBRL.ask
 
     if (currencySelectFromConvert.value == "real") {
         if (currencySelectToConvert.value == "dolar")
